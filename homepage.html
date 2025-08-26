@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--DaisyUI cdn-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!--Tailwind cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--CSS connect-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!--font awsome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title>Payoo Home</title>
+</head>
+<body class="bg-[#f4f5f7] h-[180vh] max-w-lg mx-auto">
+    <div class="nav flex justify-between items-center border-b-1 border-gray-300 p-6 bg-white">
+        <div class="nav_div1 flex">
+            <img src="assets/Group.png" alt="" class=" h-[50px]">
+            <div class="nav_div1_div01 ml-2">
+                <h2 class="nav_h2 font-bold">$<span id="balance">45000</span></h2>
+                <p class="nav_p text-gray-500">Available Balance</p>
+            </div>
+        </div>
+        <div class="nav_div2">
+            <button class="btn text-gray-500 rounded-lg"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-600"></i>Log Out</button>
+        </div>
+    </div>
+
+    <div class="wlc_msg p-6 bg-white">
+        <h2 class="wlc_msg_h2 font-bold text-[24px]">🔥 Welcome to Payooo!</h2>
+        <p class="wlc_msg_p text-gray-500">Enjoy easy and convenient financial services with us. <br>
+            Cashout charge is low and </p>
+    </div>
+
+    <div class="catgr bg-white rounded-b-xl text-gray-600 grid grid-cols-3 gap-4 p-6">
+        <div id="add_btn" class="catgr_card border-1 border-gray-300 p-3 text-center rounded-xl">
+            <img src="assets/wallet1.png" alt="" class="catgr_card_img mx-auto">
+            <h2>Add Money</h2>
+        </div>
+        <div id="cashout_btn" class="catgr_card border-1 border-gray-300 p-3 text-center rounded-xl">
+            <img src="assets/send1.png" alt="" class="catgr_card_img mx-auto">
+            <h2>Cashout</h2>
+        </div>
+        <div id="transfer_btn" class="catgr_card border-1 border-gray-300 p-3 text-center rounded-xl">
+            <img src="assets/money1.png" alt="" class="catgr_card_img mx-auto">
+            <h2>Transfer Money</h2>
+        </div>
+        <div id="bonus_btn" class="catgr_card border-1 border-gray-300 p-3 text-center rounded-xl">
+            <img src="assets/bonus1.png" alt="" class="catgr_card_img mx-auto">
+            <h2>Get Bonus</h2>
+        </div>
+        <div id="bill_btn" class="catgr_card border-1 border-gray-300 p-3 text-center rounded-xl">
+            <img src="assets/purse1.png" alt="" class="catgr_card_img mx-auto">
+            <h2>Pay Bill</h2>
+        </div>
+        <div id="transaction_btn" class="catgr_card border-1 border-gray-300 p-3 text-center rounded-xl">
+            <img src="assets/transaction1.png" alt="" class="catgr_card_img mx-auto">
+            <h2>Transactions</h2>
+        </div>
+    </div>
+    
+
+
+    <!--Add money-->
+    <div id="add_money" class="add_money p-6 hidden">
+        <h1 class="font-bold text-[18px] mb-4">Add Money</h1>
+        <form action="" class="bg-white rounded-xl p-6">
+            <div class="add_money_div">
+                <h2 class="text-gray-600 font-semibold">Select A Bank</h2>
+                <select id="bank_select" class="select text-gray-400 bg-[#f4f5f7] rounded-3xl my-3 w-full">
+                    <option disabled selected>Select Bank</option>
+                    <option>EBL</option>
+                    <option>AB Bank</option>
+                    <option>Dhaka Bank</option>
+                    <option>Brac</option>
+                    <option>City Bank</option>
+                    <option>MTB</option>
+                    <option>Dutch Bangla Bank</option>
+                </select>
+            </div>
+            <div class="add_money_div">
+                <label for="" class="text-gray-600 font-semibold">Bank Account Number</label>
+                <br>
+                <input type="text" placeholder="Enter 11 digit account number" id="acc_number" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="add_money_div">
+                <label for="" class="text-gray-600 font-semibold">Amount to Add</label>
+                <br>
+                <input type="text" placeholder="Add Amount to withdraw" id="amount_money" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="add_money_div">
+                <label for="" class="text-gray-600 font-semibold">Pin Number</label>
+                <br>
+                <input type="text" placeholder="Enter 4 digit pin number" id="acc_pin" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <button id="add_money_btn" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white text-[20px] font-semibold p-5">Add Money</button>
+        </form>
+    </div>
+
+
+    <!--Cashout-->
+    <div id="cashout" class="cashout p-6 hidden">
+        <h1 class="font-bold text-[18px] mb-4">Cash Out</h1>
+        <form action="" class="bg-white rounded-xl p-6">
+            <div class="cashout_div">
+                <label for="" class="text-gray-600 font-semibold">Agent Number</label>
+                <br>
+                <input type="text" placeholder="Enter 11 digit number" id="agent_number" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="cashout_div">
+                <label for="" class="text-gray-600 font-semibold">Amount</label>
+                <br>
+                <input type="text" placeholder="Enter amount to withdraw" id="amount_money_w" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="cashout_div">
+                <label for="" class="text-gray-600 font-semibold">Pin Number</label>
+                <br>
+                <input type="text" placeholder="Enter 4 digit pin number" id="acc_pin_w" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <button id="withdraw_btn" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white text-[20px] font-semibold p-5">Withdraw Money</button>
+        </form>
+    </div>
+
+    <!--JS script-->
+    <script src="home.js"></script>
+</body>
+</html>
