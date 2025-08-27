@@ -17,7 +17,7 @@ function get_input_val(id){
 
 function get_inner_text_num(id){
     let input_field = document.getElementById(id)
-    let input_field_val = input_field.value
+    let input_field_val = input_field.innerText
     let input_field_val_num = parseInt(input_field_val)
 
     return input_field_val_num
@@ -29,7 +29,7 @@ function set_inner_text(val){
 }
 
 function toggle_cards(id){
-    let cards = document.getElementsByClassName("cat_card")
+    let cards = document.getElementsByClassName("cat_cards")
 
     for(let i of cards){
         i.style.display = "none"
@@ -38,7 +38,7 @@ function toggle_cards(id){
 }
 
 function toggle_btn(id){
-    let btns = document.getElementsByClassName("catgr_cards")
+    let btns = document.getElementsByClassName("catgr_card")
 
     for(let i of btns){
         i.classList.remove("border-[#0874f2]", "bg-[#0874f20d]")
