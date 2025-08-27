@@ -68,7 +68,7 @@
 
 
     <!--Add money-->
-    <div id="add_money" class="add_money p-6 hidden">
+    <div id="add_money" class="cat_cards add_money p-6 hidden">
         <h1 class="font-bold text-[18px] mb-4">Add Money</h1>
         <form action="" class="bg-white rounded-xl p-6">
             <div class="add_money_div">
@@ -105,7 +105,7 @@
 
 
     <!--Cashout-->
-    <div id="cashout" class="cashout p-6 hidden">
+    <div id="cashout" class="cat_cards cashout p-6 hidden">
         <h1 class="font-bold text-[18px] mb-4">Cash Out</h1>
         <form action="" class="bg-white rounded-xl p-6">
             <div class="cashout_div">
@@ -125,6 +125,91 @@
             </div>
             <button id="withdraw_btn" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white text-[20px] font-semibold p-5">Withdraw Money</button>
         </form>
+    </div>
+
+
+    <!--Transfer money-->
+    <div id="transfer" class="cat_cards cashout p-6 hidden">
+        <h1 class="font-bold text-[18px] mb-4">Transfer Money</h1>
+        <form action="" class="bg-white rounded-xl p-6">
+            <div class="transfer_div">
+                <label for="" class="text-gray-600 font-semibold">User Account Number</label>
+                <br>
+                <input type="text" placeholder="Enter 11 digit number" id="user_acc_number" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="transfer_div">
+                <label for="" class="text-gray-600 font-semibold">Amount</label>
+                <br>
+                <input type="text" placeholder="Enter amount to transfer" id="transfer_amount" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="transfer_div">
+                <label for="" class="text-gray-600 font-semibold">Pin Number</label>
+                <br>
+                <input type="text" placeholder="Enter 4 digit pin number" id="acc_pin_t" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <button id="send_btn" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white text-[20px] font-semibold p-5">Send Now</button>
+        </form>
+    </div>
+
+
+    <!--Get bonus-->
+    <div id="bonus" class="cat_cards cashout p-6">
+        <h1 class="font-bold text-[18px] mb-4">Get Bonus</h1>
+        <form action="" class="bg-white rounded-xl p-6">
+            <div class="bonus_div">
+                <label for="" class="text-gray-600 font-semibold">Enter Bonus Coupon</label>
+                <br>
+                <input type="text" placeholder="Enter your coupon" id="cupon_code" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+
+            <button id="get_bonus_btn" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white text-[20px] font-semibold p-5">Get Bonus</button>
+        </form>
+    </div>
+
+
+    <!--Pay bill-->
+    <div id="pay_bill" class="cat_cards add_money p-6">
+        <h1 class="font-bold text-[18px] mb-4">Pay Bill</h1>
+        <form action="" class="bg-white rounded-xl p-6">
+            <div class="bill_div">
+                <h2 class="text-gray-600 font-semibold">Select To Pay</h2>
+                <select id="bill_select" class="select text-gray-400 bg-[#f4f5f7] rounded-3xl my-3 w-full">
+                    <option disabled selected>Select Bank</option>
+                    <option>EBL</option>
+                    <option>AB Bank</option>
+                    <option>Dhaka Bank</option>
+                    <option>Brac</option>
+                    <option>City Bank</option>
+                    <option>MTB</option>
+                    <option>Dutch Bangla Bank</option>
+                </select>
+            </div>
+            <div class="bill_div">
+                <label for="" class="text-gray-600 font-semibold">Biller Account Number</label>
+                <br>
+                <input type="text" placeholder="Enter account number" id="biller_acc_number" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="bill_div">
+                <label for="" class="text-gray-600 font-semibold">Amount to Pay</label>
+                <br>
+                <input type="text" placeholder="Add Amount to Pay" id="amount_money_bill" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <div class="bill_div">
+                <label for="" class="text-gray-600 font-semibold">Pin Number</label>
+                <br>
+                <input type="text" placeholder="Enter 4 digit pin number" id="acc_pin_bill" class="input bg-[#f4f5f7] rounded-3xl my-3 w-full" />
+            </div>
+            <button id="pay_bill_btn" class="btn bg-[#0874F2] mt-3 w-full rounded-3xl text-white text-[20px] font-semibold p-5">Pay Now</button>
+        </form>
+    </div>
+
+    <!--Transactions-->
+    <div id="transaction" class="cat_cards add_money p-6">
+        <div class="tra_div1 flex justify-between items-center">
+            <h1 class="font-bold text-[18px] mb-4">Transaction History</h1>
+            <p class="text-gray-500">View All</p>
+        </div>
+        
     </div>
 
     <!--JS script-->
