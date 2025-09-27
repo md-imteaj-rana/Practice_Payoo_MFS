@@ -1,3 +1,5 @@
+let transaction_history = []
+
 // function to get input val
 function get_input_val_num(id){
     let input_field = document.getElementById(id)
@@ -76,6 +78,12 @@ document.getElementById("add_money_btn")
 
         document.getElementById("balance").innerText = new_balance
 
+        let data = {
+            name : "Add Money",
+            date : new Date().toLocaleTimeString()
+        }
+
+        transaction_history.push(data)
     })
 
 // cashout 
@@ -109,6 +117,13 @@ document.getElementById("withdraw_btn").
         }
         let new_balance2 = balance_2 - cashout_amount
         document.getElementById("balance").innerText = new_balance2
+
+        let data = {
+            name : "Cash Out",
+            date : new Date().toLocaleTimeString()
+        }
+
+        transaction_history.push(data)
     })
 
 // transfer
@@ -139,8 +154,47 @@ document.getElementById("send_btn").addEventListener("click", function(e){
     let new_balance_t = balance_t - transfer_amount
 
     set_inner_text(new_balance_t)
+
+    let data = {
+            name : "Amount Transfered",
+            date : new Date().toLocaleTimeString()
+        }
+
+        transaction_history.push(data)
 })
 
+// Get bonus
+document.getElementById("bonus_btn").addEventListener("click", function(e){
+    e.preventDefault()
+})
+
+// Transactions
+document.getElementById("transaction_btn").addEventListener("click", function(e){
+    e.preventDefault()
+    let transaction_details = document.getElementById("transaction_his")
+    transaction_details.innerText = ""
+
+    for(let i of transaction_history){
+        let div = document.createElement("div")
+        div.innerHTML = `<div class="history bg-white rounded-lg border-gray-400 p-4">
+                <div class="flex justify-between items-center">
+                    <div class="rounded-xl flex items-center gap-3">
+                        <img src="assets/wallet1.png" class="bg-gray-100 p-3 rounded-full">
+    
+                        <div>
+                            <h2 class="text-[16px] font-semibold">${i.name}</h2>
+                            <p class="text-gray-500 text-[12px]">${i.date}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            </div>`
+
+            transaction_details.appendChild(div)
+    }
+})
     
 // Toggling feature
 // for add money toggle
@@ -162,4 +216,22 @@ document.getElementById("cashout_btn").
 document.getElementById("transfer_btn").addEventListener("click", function(){
     toggle_cards("transfer")
     toggle_btn("transfer_btn")
+})
+
+// for get bonus toggle 
+document.getElementById("bonus_btn").addEventListener("click", function(){
+    toggle_cards("bonus")
+    toggle_btn("bonus_btn")
+})
+
+// for pay bill toggle
+document.getElementById("bill_btn").addEventListener("click", function(){
+    toggle_cards("pay_bill")
+    toggle_btn("bill_btn")
+})
+
+// for transaction toggle
+document.getElementById("transaction_btn").addEventListener("click", function(){
+    toggle_cards("transaction")
+    toggle_btn("transaction_btn")
 })
