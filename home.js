@@ -168,6 +168,36 @@ document.getElementById("bonus_btn").addEventListener("click", function(e){
     e.preventDefault()
 })
 
+// Pay Bill
+document.getElementById("pay_bill_btn").addEventListener("click", function(e){
+    e.preventDefault()
+    let bill_type = get_input_val("bill_type_select")
+    let bill_amount = get_input_val_num("amount_money_bill")
+    let pin_bill = get_input_val_num("acc_pin_bill")
+    let balance_bill = get_inner_text_num("balance")
+    let valid_pin_bill = 4321
+
+    if(pin_bill !== valid_pin_bill){
+        alert("Invalid Pin!!")
+        return
+    }
+
+    if(bill_amount > balance_bill){
+        alert("Insufficient Balance!!")
+        return
+    }
+
+    let new_balance_bill = balance_bill - bill_amount
+    set_inner_text(new_balance_bill)
+
+    let data = {
+            name : bill_type,
+            date : new Date().toLocaleTimeString()
+        }
+
+        transaction_history.push(data)
+})
+
 // Transactions
 document.getElementById("transaction_btn").addEventListener("click", function(e){
     e.preventDefault()
@@ -176,7 +206,7 @@ document.getElementById("transaction_btn").addEventListener("click", function(e)
 
     for(let i of transaction_history){
         let div = document.createElement("div")
-        div.innerHTML = `<div class="history bg-white rounded-lg border-gray-400 p-4">
+        div.innerHTML = `<div class="history bg-white rounded-lg border-gray-400 p-4 mb-3">
                 <div class="flex justify-between items-center">
                     <div class="rounded-xl flex items-center gap-3">
                         <img src="assets/wallet1.png" class="bg-gray-100 p-3 rounded-full">
@@ -195,7 +225,8 @@ document.getElementById("transaction_btn").addEventListener("click", function(e)
             transaction_details.appendChild(div)
     }
 })
-    
+
+
 // Toggling feature
 // for add money toggle
 document.getElementById("add_btn").
@@ -234,4 +265,9 @@ document.getElementById("bill_btn").addEventListener("click", function(){
 document.getElementById("transaction_btn").addEventListener("click", function(){
     toggle_cards("transaction")
     toggle_btn("transaction_btn")
+})
+
+//Logout
+document.getElementById("logout_btn").addEventListener("click", function(){
+    window.location.href="index.html"
 })

@@ -23,12 +23,12 @@
         <div class="nav_div1 flex">
             <img src="assets/Group.png" alt="" class=" h-[50px]">
             <div class="nav_div1_div01 ml-2">
-                <h2 class="nav_h2 font-bold">$<span id="balance">45000</span></h2>
+                <h2 class="nav_h2 font-bold">$<span id="balance">5000000</span></h2>
                 <p class="nav_p text-gray-500">Available Balance</p>
             </div>
         </div>
         <div class="nav_div2">
-            <button class="btn text-gray-500 rounded-lg"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-600"></i>Log Out</button>
+            <button id="logout_btn" class="btn text-gray-500 rounded-lg"><i class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-600"></i>Log Out</button>
         </div>
     </div>
 
@@ -182,6 +182,17 @@
                     <option>City Bank</option>
                     <option>MTB</option>
                     <option>Dutch Bangla Bank</option>
+                </select>
+            </div>
+            <div class="bill_div">
+                <h2 class="text-gray-600 font-semibold">Select Bill</h2>
+                <select id="bill_type_select" class="select text-gray-400 bg-[#f4f5f7] rounded-3xl my-3 w-full">
+                    <option disabled selected>Select Bill</option>
+                    <option>Electricity Bill</option>
+                    <option>Gas Bill</option>
+                    <option>Wifi Bill</option>
+                    <option>Water Bill</option>
+                    <option>Mobile Recharge</option>
                 </select>
             </div>
             <div class="bill_div">
